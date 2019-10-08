@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>new</title>
+
+	<script src="../libraries/p5.js"></script>
+	<script src="../libraries/p5.dom.js"></script>
+	<script src="../libraries/p5.sound.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
+	<script src="../utils/theoryHelper.js"></script>
+
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		canvas {
+			margin: auto;
+		}
+
+		#controls-container {
+			display: flex;
+			flex-flow: row;
+			margin: 10px 10px;
+		}
+
+		button {
+			margin-left: 5px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="controls-container">
+
+		<span> Octave: <span id="octave-num">3</span> </span>
+		<button id="plus-button">+</button>
+		<button id="minus-button">-</button>
+	</div>
+
+	<div id="canvas-container">
+
+
+	</div>
+	<script src="usingSampler.js"></script>
+</body>
+
+</html>
