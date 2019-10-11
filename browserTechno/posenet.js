@@ -136,7 +136,7 @@ var synth3 = new Tone.PolySynth(6, Tone.Synth, {
 }).toMaster();
 const drumSynth = new Tone.MembraneSynth(kickSynthOptions);
 const sampler = new Tone.Sampler({
-  "C3": './samples/closedHat.wav'
+  "C3": '../samples/closedHat.wav'
 }, {
   "volume": -10,
   "attack": 0.0,
@@ -225,7 +225,7 @@ function setup() {
     kicksPart.start(0);
     cymPart.start(0);
     snarePart.start(0)
-    Tone.Transport.start();
+    Tone.Transport.start("+0.1");
   });
   video.hide();
 

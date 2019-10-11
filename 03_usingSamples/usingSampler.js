@@ -2,7 +2,7 @@
 // controls
 /////////////////////
 let drawWave = true;
-let effectOn = true;
+let effectOn = false;
 let octave = 3;
 
 

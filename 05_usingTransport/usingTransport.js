@@ -217,7 +217,7 @@ function setup() {
   snarePart.start(0)
 
 
-  Tone.Transport.start();
+  Tone.Transport.start("+0.1");
 
 
 
@@ -237,7 +237,7 @@ function draw() {
 
 
 function startSong() {
-  Tone.Transport.start();
+  Tone.Transport.start("+0.1");
 }
 
 function stopSong() {

@@ -12,10 +12,10 @@ let isFFT = false;
 
 const synthSettings = {
   volume: -15,
-  frequency: "C4",
+  frequency: "C7",
   detune: 0,
   oscillator: {
-    type: "square"
+    type: "sawtooth" //sine, sawtooth, triangle
   },
   filter: {
     Q: 1,
@@ -23,19 +23,19 @@ const synthSettings = {
     rolloff: -48
   },
   envelope: {
-    attack: 0.005,
+    attack: 0.01,
     decay: 0.1,
     sustain: 0.9,
-    release: 1
+    release: 4
   },
   filterEnvelope: {
-    attack: 1,
+    attack: 3,
     decay: 1,
     sustain: 0.5,
-    release: 2,
+    release: 1,
     baseFrequency: 300,
     octaves: 7,
-    exponent: 1
+    exponent: 5
   }
 }
 
@@ -67,6 +67,9 @@ function setup() {
   // create tone elements
   synth = new Tone.MonoSynth(synthSettings);
   delay = new Tone.FeedbackDelay(delaySettings);
+  autoFilter = new Tone.Chorus({
+
+  });
   fft = new Tone.FFT(256).toMaster();
   wave = new Tone.Waveform(256).toMaster();
 
@@ -74,9 +77,9 @@ function setup() {
 
   // routing
   if (effectOn) {
-    synth.connect(delay);
-    delay.connect(fft);
-    delay.connect(wave);
+    synth.connect(autoFilter);
+    autoFilter.connect(fft);
+    fft.connect(wave);
   } else {
     synth.connect(fft);
     synth.connect(wave);
